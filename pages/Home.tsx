@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Phone, Target, ShieldCheck, TrendingUp, CheckCircle2 } from 'lucide-react';
@@ -18,9 +19,9 @@ const Home: React.FC = () => {
         <div className="z-10 max-w-4xl mx-auto space-y-8 relative">
           <RevealOnScroll animation="scale-up">
             <img 
-              src={COMPANY_INFO.logo} 
-              alt="Watied Logo" 
-              className="w-32 md:w-48 mx-auto mb-6"
+              src="https://e.top4top.io/p_3616j37v31.png" 
+              alt="Watied Hero" 
+              className="w-48 md:w-80 mx-auto mb-8 object-contain drop-shadow-sm"
             />
           </RevealOnScroll>
           
@@ -216,3 +217,4 @@ const Home: React.FC = () => {
 };
 
 export default Home;
+    
