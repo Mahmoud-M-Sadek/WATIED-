@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Phone, Target, ShieldCheck, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, Phone, Target, CheckCircle2 } from 'lucide-react';
 import { COMPANY_INFO, TEXT_CONTENT, SERVICES, PROJECTS } from '../data';
 import RevealOnScroll from '../components/RevealOnScroll';
 
@@ -11,28 +11,35 @@ const Home: React.FC = () => {
       
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-4 py-20 bg-watied-beige overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute top-10 left-10 w-64 h-64 bg-watied-purple/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-watied-brown/5 rounded-full blur-3xl animate-float-delayed"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/30 rounded-full blur-[100px] -z-0"></div>
+        
+        {/* Background Image Layer */}
+        <div 
+            className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+            style={{ 
+                backgroundImage: "url('https://e.top4top.io/p_3616j37v31.png')",
+                filter: 'blur(4px)',
+                opacity: 0.35
+            }}
+        ></div>
+        
+        {/* Overlay for better text contrast */}
+        <div className="absolute inset-0 z-0 bg-watied-beige/50 mix-blend-overlay"></div>
+
+        {/* Decorative elements */}
+        <div className="absolute top-10 left-10 w-64 h-64 bg-watied-purple/10 rounded-full blur-3xl animate-float z-0"></div>
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-watied-brown/10 rounded-full blur-3xl animate-float-delayed z-0"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/20 rounded-full blur-[100px] -z-0"></div>
 
         <div className="z-10 max-w-4xl mx-auto space-y-8 relative">
-          <RevealOnScroll animation="scale-up">
-            <img 
-              src="https://e.top4top.io/p_3616j37v31.png" 
-              alt="Watied Hero" 
-              className="w-72 md:w-[500px] mx-auto mb-8 object-contain drop-shadow-sm"
-            />
-          </RevealOnScroll>
           
           <RevealOnScroll animation="fade-up" delay={200}>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-watied-purple leading-tight">
+            <h1 className="text-4xl md:text-7xl font-extrabold text-watied-purple leading-tight drop-shadow-sm">
               {TEXT_CONTENT.home.hero.headline}
             </h1>
           </RevealOnScroll>
           
           <RevealOnScroll animation="fade-up" delay={400}>
-            <p className="text-lg md:text-xl text-watied-olive font-medium max-w-2xl mx-auto border-t border-b border-watied-olive/20 py-4">
+            <p className="text-lg md:text-2xl text-watied-olive font-bold max-w-2xl mx-auto border-t-2 border-b-2 border-watied-olive/10 py-6 bg-white/40 backdrop-blur-sm rounded-lg shadow-sm">
               {TEXT_CONTENT.home.hero.subline}
             </p>
           </RevealOnScroll>
@@ -41,7 +48,7 @@ const Home: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
               <a 
                 href={`tel:${COMPANY_INFO.phone}`} 
-                className="px-8 py-4 bg-watied-purple text-white text-lg font-bold rounded-lg hover:bg-watied-brown hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
+                className="px-8 py-4 bg-watied-purple text-white text-lg font-bold rounded-lg hover:bg-watied-brown hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 shadow-xl shadow-watied-purple/20"
               >
                 <Phone size={20} /> اتصل الآن
               </a>
@@ -49,7 +56,7 @@ const Home: React.FC = () => {
                 href={COMPANY_INFO.whatsapp} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-green-600 text-white text-lg font-bold rounded-lg hover:bg-green-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
+                className="px-8 py-4 bg-green-600 text-white text-lg font-bold rounded-lg hover:bg-green-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 shadow-xl shadow-green-600/20"
               >
                  تواصل واتساب
               </a>
