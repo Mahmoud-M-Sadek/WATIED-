@@ -21,7 +21,7 @@ const Home: React.FC = () => {
             <img 
               src="https://e.top4top.io/p_3616j37v31.png" 
               alt="Watied Hero" 
-              className="w-48 md:w-80 mx-auto mb-8 object-contain drop-shadow-sm"
+              className="w-72 md:w-[500px] mx-auto mb-8 object-contain drop-shadow-sm"
             />
           </RevealOnScroll>
           
@@ -217,4 +217,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-    
