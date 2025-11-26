@@ -22,9 +22,9 @@ const About: React.FC = () => {
                 
                 <div className="flex flex-col items-center mb-10">
                      <RevealOnScroll animation="scale-up" delay={200}>
-                        <img src={COMPANY_INFO.logo} alt="Watied" className="w-32 mb-6 hover:scale-105 transition-transform" />
+                        <img src={COMPANY_INFO.logo} alt="WATIED" className="w-32 mb-6 hover:scale-105 transition-transform" />
                      </RevealOnScroll>
-                     <h2 className="text-2xl font-bold text-watied-purple text-center">وطيد Marketing Solutions</h2>
+                     <h2 className="text-2xl font-bold text-watied-purple text-center">WATIED Marketing Solutions</h2>
                 </div>
                 
                 <div className="prose prose-lg text-gray-700 leading-loose whitespace-pre-line text-justify mx-auto">
@@ -36,7 +36,7 @@ const About: React.FC = () => {
                     <RevealOnScroll delay={300} animation="slide-in-right">
                         <div className="bg-watied-beige p-6 rounded-xl border-r-4 border-watied-brown my-8 hover:shadow-md transition-shadow">
                              <p className="font-bold text-watied-purple text-lg">
-                                فلسفتنا بسيطة: نعالج جذور المشكلة… مش المظاهر.
+                                فلسفتنا راسخة: نعالج جذور التحديات... لا نكتفي بتجميل المظاهر.
                              </p>
                         </div>
                     </RevealOnScroll>
@@ -47,7 +47,7 @@ const About: React.FC = () => {
                                  <div className="bg-watied-purple text-white p-1 rounded-full mt-1 shrink-0">
                                     <Target size={16} />
                                  </div>
-                                 <span className="text-lg">نشتغل مع المشاريع اللي عايزة تبني كيان ثابت ومحترم.</span>
+                                 <span className="text-lg">نعمل مع المشاريع التي تسعى لبناء كيان مؤسسي ثابت ومحترم.</span>
                             </li>
                         </RevealOnScroll>
                         <RevealOnScroll delay={500} animation="fade-up">
@@ -55,7 +55,7 @@ const About: React.FC = () => {
                                  <div className="bg-watied-brown text-white p-1 rounded-full mt-1 shrink-0">
                                     <Layers size={16} />
                                  </div>
-                                 <span className="text-lg">نفهم – ندرس – نحلل – نبني – نطلق… بدون لف ودوران.</span>
+                                 <span className="text-lg">منهجيتنا: نفهم – ندرس – نحلل – نبني – نطلق... بمهنية ومصداقية.</span>
                             </li>
                         </RevealOnScroll>
                     </ul>

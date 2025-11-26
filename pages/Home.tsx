@@ -50,7 +50,7 @@ const Home: React.FC = () => {
                 href={`tel:${COMPANY_INFO.phone}`} 
                 className="px-8 py-4 bg-watied-purple text-white text-lg font-bold rounded-lg hover:bg-watied-brown hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 shadow-xl shadow-watied-purple/20"
               >
-                <Phone size={20} /> اتصل الآن
+                <Phone size={20} /> اتصل بنا الآن
               </a>
               <a 
                 href={COMPANY_INFO.whatsapp} 
@@ -58,7 +58,7 @@ const Home: React.FC = () => {
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-green-600 text-white text-lg font-bold rounded-lg hover:bg-green-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 shadow-xl shadow-green-600/20"
               >
-                 تواصل واتساب
+                 تواصل عبر واتساب
               </a>
             </div>
           </RevealOnScroll>
@@ -73,7 +73,7 @@ const Home: React.FC = () => {
               <RevealOnScroll animation="slide-in-right">
                 <h2 className="text-3xl font-bold text-watied-purple flex items-center gap-2">
                   <span className="w-12 h-1 bg-watied-brown inline-block"></span>
-                  عن وطيد
+                  عن WATIED
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed text-justify mt-4">
                   {TEXT_CONTENT.home.aboutSnippet}
@@ -107,7 +107,7 @@ const Home: React.FC = () => {
           <RevealOnScroll animation="fade-up">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-watied-purple mb-4">خدماتنا</h2>
-              <p className="text-watied-olive">حلول متكاملة لبناء وتطوير مشروعك</p>
+              <p className="text-watied-olive">حلول أعمال متكاملة لبناء وتطوير مؤسستك</p>
             </div>
           </RevealOnScroll>
           
@@ -128,7 +128,7 @@ const Home: React.FC = () => {
           <div className="text-center mt-12">
             <RevealOnScroll delay={200}>
               <Link to="/services" className="px-8 py-3 border-2 border-watied-purple text-watied-purple font-bold rounded-lg hover:bg-watied-purple hover:text-white transition-colors inline-block">
-                عرض كل الخدمات
+                استعراض كافة الخدمات
               </Link>
             </RevealOnScroll>
           </div>
@@ -142,10 +142,10 @@ const Home: React.FC = () => {
             <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-watied-purple mb-4">أعمالنا</h2>
-                <p className="text-watied-olive">قصص نجاح صنعناها بدقة</p>
+                <p className="text-watied-olive">قصص نجاح صنعناها بدقة واحترافية</p>
               </div>
               <Link to="/projects" className="hidden md:flex items-center text-watied-brown hover:text-watied-purple transition-colors font-bold">
-                تصفح كل المشاريع <ArrowLeft size={20} className="mr-2" />
+                تصفح كافة المشاريع <ArrowLeft size={20} className="mr-2" />
               </Link>
             </div>
           </RevealOnScroll>
@@ -180,7 +180,7 @@ const Home: React.FC = () => {
 
           <div className="mt-8 text-center md:hidden">
             <Link to="/projects" className="text-watied-brown font-bold underline">
-              تصفح كل المشاريع
+              تصفح كافة المشاريع
             </Link>
           </div>
         </div>
@@ -191,7 +191,7 @@ const Home: React.FC = () => {
         <div className="absolute inset-0 opacity-10 pattern-dots animate-pulse-slow"></div> 
         <div className="container mx-auto px-4 text-center relative z-10">
           <RevealOnScroll animation="scale-up">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">جاهز تبني مشروع حقيقي؟</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">هل أنت مستعد لبناء مشروع حقيقي؟</h2>
           </RevealOnScroll>
           <RevealOnScroll animation="fade-up" delay={200}>
             <p className="text-xl md:text-2xl text-watied-beige mb-10 max-w-2xl mx-auto opacity-90">

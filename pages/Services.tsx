@@ -53,8 +53,8 @@ const Services: React.FC = () => {
             <div className="mt-20 bg-watied-purple text-white rounded-3xl p-8 md:p-16 text-center md:text-right relative overflow-hidden shadow-2xl">
                  <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
                      <div className="space-y-4">
-                        <h2 className="text-3xl font-bold">هدفنا النهائي</h2>
-                        <p className="text-xl opacity-90">نقل المشروع من "شغال" إلى "مربح قابل للنمو"</p>
+                        <h2 className="text-3xl font-bold">هدفنا الأسمى</h2>
+                        <p className="text-xl opacity-90">تحويل المشروع من مجرد نشاط "قائم" إلى مؤسسة مربحة قابلة للنمو</p>
                      </div>
                      <Link to="/contact" className="bg-white text-watied-purple px-8 py-4 rounded-xl font-bold text-lg hover:bg-watied-beige transition-colors shadow-lg whitespace-nowrap transform hover:scale-105 duration-300">
                         اطلب استشارة مجانية

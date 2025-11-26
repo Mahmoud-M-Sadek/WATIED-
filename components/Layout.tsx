@@ -9,10 +9,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   const navLinks = [
     { name: 'الرئيسية', path: '/' },
-    { name: 'عن وطيد', path: '/about' },
+    { name: 'عن WATIED', path: '/about' },
     { name: 'خدماتنا', path: '/services' },
     { name: 'أعمالنا', path: '/projects' },
-    { name: 'تواصل معنا', path: '/contact' },
+    { name: 'اتصل بنا', path: '/contact' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -27,10 +27,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <Link to="/" className="flex items-center gap-2 group">
             <img 
               src={COMPANY_INFO.logo} 
-              alt="Watied Logo" 
+              alt="WATIED Logo" 
               className="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
             />
-            <span className="text-xl font-bold text-watied-purple hidden sm:block">وطيد</span>
+            <span className="text-xl font-extrabold text-watied-purple hidden sm:block tracking-wide">WATIED</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -91,7 +91,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <div className="text-center md:text-right space-y-4">
               <img src={COMPANY_INFO.logo} alt="Logo" className="h-16 w-auto mx-auto md:mx-0 brightness-0 invert opacity-90" />
               <p className="text-sm opacity-80 leading-relaxed max-w-xs mx-auto md:mx-0">
-                نحول المشاريع من مجرد نشاط شغال إلى براند ثابت وناجح. فلسفتنا بسيطة: نعالج جذور المشكلة مش المظاهر.
+                نحول المشاريع من مجرد أنشطة قائمة إلى علامات تجارية راسخة وناجحة. فلسفتنا راسخة: نعالج جذور التحديات لا المظاهر.
               </p>
             </div>
 
@@ -111,7 +111,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
             {/* Column 3: Contact */}
             <div className="text-center md:text-right space-y-4">
-              <h3 className="text-xl font-bold mb-4 text-white border-b-2 border-watied-brown inline-block pb-1">تواصل معنا</h3>
+              <h3 className="text-xl font-bold mb-4 text-white border-b-2 border-watied-brown inline-block pb-1">بيانات التواصل</h3>
               <div className="flex flex-col gap-3 items-center md:items-start">
                 <a href={`tel:${COMPANY_INFO.phone}`} className="flex items-center gap-2 hover:text-watied-brown transition-colors">
                   <Phone size={18} /> <span dir="ltr">{COMPANY_INFO.phone}</span>

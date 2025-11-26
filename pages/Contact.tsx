@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
        <div className="bg-watied-purple py-20 text-center text-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl animate-pulse-slow"></div>
         <RevealOnScroll>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 relative z-10">تواصل معنا</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 relative z-10">اتصل بنا</h1>
             <p className="text-watied-beige/80 text-lg relative z-10">نحن هنا لبناء نجاحك</p>
         </RevealOnScroll>
       </div>
@@ -61,7 +61,7 @@ const Contact: React.FC = () => {
                             </a>
                         </div>
                          <a href={COMPANY_INFO.whatsapp} target="_blank" rel="noopener noreferrer" className="block w-full bg-green-500 text-white py-3 rounded-lg text-center font-bold hover:bg-green-600 transition-all hover:-translate-y-1 shadow-md">
-                                تواصل واتساب مباشرة
+                                تواصل عبر واتساب مباشرة
                         </a>
                     </div>
                 </RevealOnScroll>
@@ -88,17 +88,17 @@ const Contact: React.FC = () => {
                 <div className="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100 relative">
                     <div className="absolute top-0 right-0 w-20 h-20 bg-watied-purple/5 rounded-bl-full -z-0"></div>
                     <h3 className="text-2xl font-bold text-watied-purple mb-2 relative z-10">أرسل رسالة</h3>
-                    <p className="text-gray-500 mb-8 relative z-10">املأ النموذج وسنتواصل معك لمناقشة مشروعك.</p>
+                    <p className="text-gray-500 mb-8 relative z-10">يرجى ملء النموذج أدناه وسيقوم فريقنا بالتواصل معك لمناقشة مشروعك.</p>
                     
                     <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                         <div>
-                            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">الاسم</label>
+                            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">الاسم بالكامل</label>
                             <input 
                                 type="text" 
                                 id="name" 
                                 required 
                                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-watied-purple focus:border-transparent outline-none transition-all hover:border-watied-olive/50"
-                                placeholder="اسمك الكريم"
+                                placeholder="الاسم الثلاثي"
                             />
                         </div>
                         
@@ -132,7 +132,7 @@ const Contact: React.FC = () => {
                                 rows={4} 
                                 required 
                                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-watied-purple focus:border-transparent outline-none transition-all hover:border-watied-olive/50"
-                                placeholder="حدثنا قليلاً عن مشروعك وأهدافك..."
+                                placeholder="يرجى تزويدنا بنبذة مختصرة عن المشروع وأهدافكم..."
                             ></textarea>
                         </div>
 
