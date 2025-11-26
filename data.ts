@@ -169,6 +169,50 @@ export const PROJECTS: Project[] = [
       'https://h.top4top.io/p_36167dnqn8.png',
       'https://i.top4top.io/p_36161754s9.png'
     ]
+  },
+  {
+    id: 'social-media-campaigns',
+    title: 'تصاميم سوشيال ميديا إبداعية',
+    category: 'تصميم جرافيك & محتوى',
+    coverImage: 'https://b.top4top.io/p_3617kphpx2.png',
+    description: 'مجموعة من التصاميم الإعلانية المبتكرة التي تهدف إلى جذب الانتباه وتعزيز الهوية البصرية للعلامة التجارية عبر منصات التواصل الاجتماعي.',
+    gallery: [
+      'https://a.top4top.io/p_3617163f01.png',
+      'https://b.top4top.io/p_3617kphpx2.png',
+      'https://c.top4top.io/p_3617z00pt3.png',
+      'https://d.top4top.io/p_3617qq2av4.png',
+      'https://e.top4top.io/p_36177ky9n5.png',
+      'https://f.top4top.io/p_3617g1fjn6.png',
+      'https://g.top4top.io/p_3617nm3l37.png',
+      'https://h.top4top.io/p_3617336uq8.png',
+      'https://i.top4top.io/p_3617n58iw9.png'
+    ]
+  },
+  {
+    id: 'creative-designs-portfolio',
+    title: 'تصاميم إبداعية لمنتجات متنوعة',
+    category: 'تصميم جرافيك & إعلانات',
+    coverImage: 'https://a.top4top.io/p_3617h5rho4.png',
+    description: 'باقة متميزة من التصاميم الإعلانية وتصاميم السوشيال ميديا لمنتجات وخدمات متنوعة، تعكس رؤيتنا في دمج الإبداع البصري مع الرسالة التسويقية الفعالة.',
+    gallery: [
+      'https://f.top4top.io/p_3617sph2r1.png',
+      'https://g.top4top.io/p_3617e31zv2.png',
+      'https://h.top4top.io/p_3617cycb43.png',
+      'https://i.top4top.io/p_36171l9vc4.png',
+      'https://j.top4top.io/p_3617t2c8t5.png',
+      'https://k.top4top.io/p_3617bo9q56.png',
+      'https://l.top4top.io/p_3617hqmjs7.png',
+      'https://a.top4top.io/p_3617sa67m8.png',
+      'https://b.top4top.io/p_36176t4ti9.png',
+      'https://c.top4top.io/p_3617tyxco10.png',
+      'https://j.top4top.io/p_3617f11fh1.png',
+      'https://k.top4top.io/p_3617g9tr72.png',
+      'https://l.top4top.io/p_3617q9svt3.png',
+      'https://a.top4top.io/p_3617h5rho4.png',
+      'https://h.top4top.io/p_3617uha471.png',
+      'https://i.top4top.io/p_3617ja2h62.png',
+      'https://j.top4top.io/p_3617xjotx3.png'
+    ]
   }
 ];
 

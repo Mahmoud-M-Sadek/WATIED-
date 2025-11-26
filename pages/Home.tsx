@@ -150,8 +150,8 @@ const Home: React.FC = () => {
             </div>
           </RevealOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {PROJECTS.slice(0, 2).map((project, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {PROJECTS.slice(0, 3).map((project, idx) => (
               <RevealOnScroll key={project.id} delay={idx * 200} animation="scale-up">
                 <Link 
                   to={`/projects/${project.id}`}
