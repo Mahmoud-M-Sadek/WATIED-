@@ -1,12 +1,15 @@
+
 import React from 'react';
 import { SERVICES } from '../data';
-import { CheckCircle, BarChart3, Palette, DollarSign, Users, Megaphone, Layers } from 'lucide-react';
+import { CheckCircle, BarChart3, Palette, DollarSign, Users, Megaphone, Layers, Search, Monitor } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import RevealOnScroll from '../components/RevealOnScroll';
 
 const getIcon = (id: string) => {
     switch(id) {
         case 'identity': return <Palette size={32} />;
+        case 'web-design': return <Monitor size={32} />;
+        case 'seo': return <Search size={32} />;
         case 'market-analysis': return <BarChart3 size={32} />;
         case 'marketing-plans': return <Megaphone size={32} />;
         case 'pricing': return <DollarSign size={32} />;
