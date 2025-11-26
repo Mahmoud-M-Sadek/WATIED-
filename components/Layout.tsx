@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Instagram, Facebook, MapPin, ExternalLink } from 'lucide-react';
@@ -106,6 +107,11 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <Link to="/careers" className="hover:text-watied-brown transition-colors font-bold text-white">
+                    انضم لفريقنا (توظيف)
+                  </Link>
+                </li>
               </ul>
             </div>
 

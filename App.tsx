@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
@@ -7,6 +8,7 @@ import Services from './pages/Services';
 import Projects from './pages/Projects';
 import ProjectDetails from './pages/ProjectDetails';
 import Contact from './pages/Contact';
+import Careers from './pages/Careers';
 
 // ScrollToTop component handling scroll restoration
 const ScrollToTop = () => {
@@ -31,6 +33,7 @@ const App: React.FC = () => {
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetails />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/careers" element={<Careers />} />
         </Routes>
       </Layout>
     </Router>

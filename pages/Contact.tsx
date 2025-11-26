@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Phone, MapPin, Instagram, Facebook, Send } from 'lucide-react';
 import { COMPANY_INFO } from '../data';
@@ -34,7 +35,7 @@ const Contact: React.FC = () => {
                             </div>
                             <div>
                                 <p className="text-sm text-gray-500 mb-1">الهاتف / واتساب</p>
-                                <a href={`tel:${COMPANY_INFO.phone}`} className="text-xl font-bold text-gray-800 hover:text-watied-purple dir-ltr block text-right">
+                                <a href={`tel:${COMPANY_INFO.phone}`} dir="ltr" className="text-xl font-bold text-gray-800 hover:text-watied-purple block text-right">
                                     {COMPANY_INFO.phone}
                                 </a>
                             </div>
@@ -110,7 +111,7 @@ const Contact: React.FC = () => {
                                 required 
                                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-watied-purple focus:border-transparent outline-none transition-all text-right hover:border-watied-olive/50"
                                 placeholder="01xxxxxxxxx"
-                                dir="rtl"
+                                dir="ltr"
                             />
                         </div>
 
