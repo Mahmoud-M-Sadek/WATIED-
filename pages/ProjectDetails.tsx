@@ -1,13 +1,68 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { PROJECTS, TEXT_CONTENT } from '../data';
-import { X, ZoomIn } from 'lucide-react';
+import { X, ZoomIn, ChevronRight, ChevronLeft } from 'lucide-react';
 import RevealOnScroll from '../components/RevealOnScroll';
 
 const ProjectDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const project = PROJECTS.find(p => p.id === id);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
+
+  const showNext = useCallback(() => {
+    if (project && selectedIndex !== null) {
+      setSelectedIndex((prev) => (prev! + 1) % project.gallery.length);
+    }
+  }, [project, selectedIndex]);
+
+  const showPrev = useCallback(() => {
+    if (project && selectedIndex !== null) {
+      setSelectedIndex((prev) => (prev! - 1 + project.gallery.length) % project.gallery.length);
+    }
+  }, [project, selectedIndex]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedIndex === null) return;
+      if (e.key === 'ArrowRight') showPrev(); // RTL: Right arrow goes to previous (logical left)
+      if (e.key === 'ArrowLeft') showNext();  // RTL: Left arrow goes to next (logical right)
+      if (e.key === 'Escape') setSelectedIndex(null);
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedIndex, showNext, showPrev]);
+
+  // Touch handlers for swiping
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      showNext();
+    } else if (isRightSwipe) {
+      showPrev();
+    }
+  };
 
   if (!project) {
     return <Navigate to="/projects" replace />;
@@ -59,12 +114,13 @@ const ProjectDetails: React.FC = () => {
                     <RevealOnScroll key={idx} delay={idx % 3 * 100} animation="fade-up">
                         <div 
                             className="cursor-pointer overflow-hidden rounded-lg relative group aspect-square shadow-sm hover:shadow-lg transition-all"
-                            onClick={() => setSelectedImage(img)}
+                            onClick={() => setSelectedIndex(idx)}
                         >
                             <img 
                                 src={img} 
                                 alt={`${project.title} ${idx + 1}`} 
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                loading="lazy"
                             />
                             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white backdrop-blur-[2px]">
                                 <ZoomIn size={32} className="transform scale-50 group-hover:scale-100 transition-transform duration-300" />
@@ -91,20 +147,59 @@ const ProjectDetails: React.FC = () => {
         </RevealOnScroll>
       </div>
 
-      {/* Lightbox */}
-      {selectedImage && (
-        <div className="fixed inset-0 z-[60] bg-black/95 flex items-center justify-center p-4 animate-fade-in backdrop-blur-sm">
+      {/* Lightbox / Slider */}
+      {selectedIndex !== null && (
+        <div 
+          className="fixed inset-0 z-[60] bg-black/95 flex items-center justify-center animate-fade-in backdrop-blur-md select-none"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
+            {/* Close Button */}
             <button 
-                className="absolute top-6 right-6 text-white hover:text-watied-brown transition-colors z-50 p-2 bg-black/50 rounded-full"
-                onClick={() => setSelectedImage(null)}
+                className="absolute top-6 right-6 text-white hover:text-watied-brown transition-colors z-[70] p-3 bg-white/10 hover:bg-white/20 rounded-full"
+                onClick={() => setSelectedIndex(null)}
+                aria-label="إغلاق"
             >
                 <X size={32} />
             </button>
-            <img 
-                src={selectedImage} 
-                alt="Fullscreen view" 
-                className="max-h-[90vh] max-w-full object-contain rounded-sm shadow-2xl animate-scale-up" 
-            />
+
+            {/* Navigation Buttons (Desktop) */}
+            <button 
+                className="absolute left-4 md:left-10 text-white hover:text-watied-brown transition-all z-[70] p-4 bg-white/5 hover:bg-white/15 rounded-full hidden sm:block"
+                onClick={(e) => { e.stopPropagation(); showNext(); }}
+                aria-label="التالي"
+            >
+                <ChevronLeft size={48} />
+            </button>
+
+            <button 
+                className="absolute right-4 md:right-10 text-white hover:text-watied-brown transition-all z-[70] p-4 bg-white/5 hover:bg-white/15 rounded-full hidden sm:block"
+                onClick={(e) => { e.stopPropagation(); showPrev(); }}
+                aria-label="السابق"
+            >
+                <ChevronRight size={48} />
+            </button>
+
+            {/* Image Container */}
+            <div className="relative w-full h-full flex items-center justify-center p-4" onClick={() => setSelectedIndex(null)}>
+                <img 
+                    key={selectedIndex}
+                    src={project.gallery[selectedIndex]} 
+                    alt="Fullscreen view" 
+                    className="max-h-[85vh] max-w-full object-contain rounded-sm shadow-2xl animate-scale-up pointer-events-none" 
+                />
+                
+                {/* Image Counter */}
+                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full text-sm font-bold backdrop-blur-md">
+                    {selectedIndex + 1} / {project.gallery.length}
+                </div>
+                
+                {/* Swipe Helper Tip (Mobile) */}
+                <div className="absolute bottom-24 left-1/2 -translate-x-1/2 text-white/40 text-xs sm:hidden">
+                    اسحب لليمين أو اليسار للتنقل
+                </div>
+            </div>
         </div>
       )}
     </div>
